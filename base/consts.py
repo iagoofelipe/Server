@@ -1,0 +1,15 @@
+FILE_CONFIG = 'config.ini'
+PATH_LOG = 'log'
+
+# default values
+DEFAULT_IP = '0.0.0.0'
+DEFAULT_PORT = 443
+DEFAULT_DB_HOST = '127.0.0.1'
+
+SERVER_MAX_LISTEN = 5
+SERVER_BUFFER = 1024
+SERVER_CMD_END = '!0'
+SERVER_CMD_SEP = '!'
+
+# Server commands
+CMD_CLOSE = SERVER_CMD_SEP + 'CLOSE'
