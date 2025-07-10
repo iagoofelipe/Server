@@ -1,5 +1,7 @@
 from PySide6.QtCore import QObject, Signal
 
+from base.socketIO import SocketIO
+
 class ServerClient(QObject):
 
     class Connection(SocketIO):
@@ -7,8 +9,3 @@ class ServerClient(QObject):
             super().__init__()
             self.__cls = cls
 
-        def onCommandReceived(self, cmd:str, args):
-            ...
-
-        def onConnected(self):
-            ...

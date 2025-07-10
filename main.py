@@ -28,6 +28,11 @@ if __name__ == '__main__':
         server = ChatServer(args)
         server.startloop()
 
+    elif option == 'inventory.app':
+        from apps.inventory.app import InventoryApp
+        app = InventoryApp(args)
+        app.exec()
+
     else:
         print(
             f'usage: {os.path.basename(__file__)} [option [-h]]',
@@ -35,6 +40,7 @@ if __name__ == '__main__':
             'options:',
             '\tchat.app\t\tChat application',
             '\tchat.server\t\tChat server',
+            '\tinventory.app\t\tInventory application',
             '',
             'parameters:',
             '\t-h, --help\t\tshow the help message',
