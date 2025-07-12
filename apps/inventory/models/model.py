@@ -7,7 +7,7 @@ from .sysinfo import Program, getPrograms, getProperties
 from ..backend.consts import DEFAULT_PROPS
 
 class AppModel(QObject):
-    initilizationFinished = Signal(bool)
+    initilizationFinished = Signal(bool, str)
     
     def __init__(self):
         super().__init__()
@@ -16,6 +16,9 @@ class AppModel(QObject):
         self.__programs = None
         self.__system = None
 
+        self.__client.connected.connect(self.on_client_connected)
+        self.__client.connectionError.connect(self.on_client_connectionError)
+
     @property
     def programsData(self) -> tuple[Program]: return self.__programs
 
@@ -23,7 +26,10 @@ class AppModel(QObject):
     def systemData(self) -> dict[str, dict[str, str]]: return self.__system
 
     def initialize(self):
-        Thread(target=self.__initialize).start()
+        self.__client.initialize()
+
+    def close(self):
+        self.__client.close()
 
     def __initialize(self):
         try:
@@ -37,4 +43,10 @@ class AppModel(QObject):
             self.__system = None
             success = False
 
-        self.initilizationFinished.emit(success)
+        self.initilizationFinished.emit(success, '')
+
+    def on_client_connected(self):
+        Thread(target=self.__initialize).start()
+
+    def on_client_connectionError(self, error:str):
+        self.initilizationFinished.emit(False, error)

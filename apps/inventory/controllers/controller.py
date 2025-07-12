@@ -16,7 +16,7 @@ class AppController(QObject):
         self.__view.initialize()
         self.__model.initialize()
 
-    def on_model_initializationFinished(self, success:bool):
+    def on_model_initializationFinished(self, success:bool, error:str):
         if success:
             form = self.__view.inventoryForm()
 
@@ -26,4 +26,7 @@ class AppController(QObject):
         
         else:
             form = self.__view.alertForm()
-            form.setText('error')
+            form.setText(error, False)
+
+    def close(self):
+        self.__model.close()

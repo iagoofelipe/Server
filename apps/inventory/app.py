@@ -16,6 +16,8 @@ class InventoryApp(QApplication):
         self.__view = AppView(self.__model)
         self.__controller = AppController(self.__model, self.__view)
 
+        self.aboutToQuit.connect(self.__controller.close)
+
     def exec(self):
         self.__controller.initialize()
 

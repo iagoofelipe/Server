@@ -13,16 +13,24 @@ class AlertForm(QObject):
         wid = QWidget(parent)
         layout = QVBoxLayout(wid)
         self.__label = QLabel('', wid, alignment=Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
-        self.setText('initializing components')
-        timer = QTimer(self.__label)
+        self.__timer = QTimer(self.__label)
 
         layout.addWidget(self.__label)
-        timer.timeout.connect(self.on_timer_timeout)
-        timer.start(1000)
+        self.__timer.setInterval(1000)
+        self.__timer.timeout.connect(self.on_timer_timeout)
+        self.setText('initializing components')
 
         return wid
     
-    def setText(self, arg:str):
+    def setText(self, arg:str, loadingMode=True):
+        timerActive = self.__timer.isActive()
+
+        if loadingMode and not timerActive:
+                self.__timer.start()
+
+        if not loadingMode and timerActive:
+                self.__timer.stop()
+
         self.__count = 0
         self.__initialText = self.__text = arg
         self.__label.setText(arg)

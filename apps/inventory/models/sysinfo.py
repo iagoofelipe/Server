@@ -1,8 +1,6 @@
 from typing import NamedTuple, Iterable
 import subprocess
 
-from ..backend.consts import DEFAULT_PROPS
-
 class Program(NamedTuple):
     DisplayName:str
     DisplayVersion:str
@@ -37,6 +35,3 @@ def getProperties(className:str, properties:Iterable[str]) -> dict:
         props[key] = value
 
     return props
-
-def getDefaultProperties():
-    pass
