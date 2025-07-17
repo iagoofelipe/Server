@@ -12,10 +12,13 @@ DEFAULT_PROPS = {
     'Processor': {
         'className': 'Win32_Processor',
         'properties': ('Name', 'NumberOfLogicalProcessors', 'NumberOfCores'),
-    },
+    }
 }
 
 UI_ID_ALERT_FORM = 0
 UI_ID_INVENTORY_FORM = 1
+UI_ID_USER_FORM = 2
 
 CMD_SYSINFO = SERVER_CMD_SEP + 'SYSINFO'
+CMD_USER_VALIDATE = SERVER_CMD_SEP + 'USER_VALIDATE'
+CMD_USER_CREATE = SERVER_CMD_SEP + 'USER_CREATE'

@@ -62,6 +62,7 @@ class Server:
         id = address[1]
         self._clients[id] = client = self.Client(socket, id)
 
+        log.info(f"{self._pref} ({id}) client connected")
         client.connect(SocketIO.EVT_CONNECTION_ERROR, self.onClientConnectionError)
         client.connect(SocketIO.EVT_CONNECTION_FINISHED, self.onClientConnectionFinished)
         client.startloop()

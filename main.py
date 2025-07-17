@@ -6,6 +6,24 @@ Main entry, used to invoke the needed resource by commandline.
 
 import sys, os
 
+def helpMessage():
+    print(
+        f'usage: {os.path.basename(__file__)} [option [-h]]',
+        '',
+        'options:',
+        '\tchat.app\t\tChat application',
+        '\tchat.server\t\tChat server',
+        '\tinventory.app\t\tInventory application',
+        '\tinventory.server\t\tInventory server',
+        '\ttest',
+        '\t\tinventory.app',
+        '\t\t\tuserForm',
+        '',
+        'parameters:',
+        '\t-h, --help\t\tshow the help message',
+        sep='\n'
+    )
+
 if __name__ == '__main__':
     argv = sys.argv
     length = len(argv)
@@ -38,17 +56,14 @@ if __name__ == '__main__':
         server = InventoryServer(args)
         server.startloop()
 
+    elif option == 'test':
+        if len(args) != 2:
+            helpMessage()
+        
+        elif args[0] == 'inventory.app':
+            from apps.inventory.tests import *
+
+            eval(f'test_{args[1]}()')
+
     else:
-        print(
-            f'usage: {os.path.basename(__file__)} [option [-h]]',
-            '',
-            'options:',
-            '\tchat.app\t\tChat application',
-            '\tchat.server\t\tChat server',
-            '\tinventory.app\t\tInventory application',
-            '\tinventory.server\t\tInventory server',
-            '',
-            'parameters:',
-            '\t-h, --help\t\tshow the help message',
-            sep='\n'
-        )
+        helpMessage()

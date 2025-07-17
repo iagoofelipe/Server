@@ -29,6 +29,11 @@ class Ui_InventoryForm(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.groupBox = QGroupBox(InventoryForm)
         self.groupBox.setObjectName(u"groupBox")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy)
         self.formLayout = QFormLayout(self.groupBox)
         self.formLayout.setObjectName(u"formLayout")
         self.label = QLabel(self.groupBox)
@@ -38,21 +43,43 @@ class Ui_InventoryForm(object):
 
         self.lineName = QLineEdit(self.groupBox)
         self.lineName.setObjectName(u"lineName")
+        self.lineName.setReadOnly(True)
 
         self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.lineName)
 
         self.label_2 = QLabel(self.groupBox)
         self.label_2.setObjectName(u"label_2")
 
-        self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_2)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_2)
 
         self.lineCpf = QLineEdit(self.groupBox)
         self.lineCpf.setObjectName(u"lineCpf")
+        self.lineCpf.setReadOnly(True)
 
-        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.lineCpf)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.lineCpf)
 
 
         self.verticalLayout_3.addWidget(self.groupBox)
+
+        self.groupBox_2 = QGroupBox(InventoryForm)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy)
+        self.formLayout_2 = QFormLayout(self.groupBox_2)
+        self.formLayout_2.setObjectName(u"formLayout_2")
+        self.label_3 = QLabel(self.groupBox_2)
+        self.label_3.setObjectName(u"label_3")
+
+        self.formLayout_2.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_3)
+
+        self.lineMac = QLineEdit(self.groupBox_2)
+        self.lineMac.setObjectName(u"lineMac")
+        self.lineMac.setReadOnly(True)
+
+        self.formLayout_2.setWidget(0, QFormLayout.ItemRole.FieldRole, self.lineMac)
+
+
+        self.verticalLayout_3.addWidget(self.groupBox_2)
 
         self.tabWidget = QTabWidget(InventoryForm)
         self.tabWidget.setObjectName(u"tabWidget")
@@ -116,6 +143,8 @@ class Ui_InventoryForm(object):
         self.groupBox.setTitle(QCoreApplication.translate("InventoryForm", u"User", None))
         self.label.setText(QCoreApplication.translate("InventoryForm", u"Name", None))
         self.label_2.setText(QCoreApplication.translate("InventoryForm", u"CPF", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("InventoryForm", u"Machine", None))
+        self.label_3.setText(QCoreApplication.translate("InventoryForm", u"MAC", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.widTabSystem), QCoreApplication.translate("InventoryForm", u"System", None))
         ___qtablewidgetitem = self.tablePrograms.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("InventoryForm", u"DisplayName", None));

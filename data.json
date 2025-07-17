@@ -1,0 +1,474 @@
+{
+    "programs": {
+        "fields": [
+            "DisplayName",
+            "DisplayVersion",
+            "InstallDate",
+            "Publisher"
+        ],
+        "data": [
+            [
+                "Arduino IDE 2.3.6",
+                "2.3.6",
+                "",
+                "Arduino SA"
+            ],
+            [
+                "Git",
+                "2.50.0",
+                "20250630",
+                "The Git Development Community"
+            ],
+            [
+                "Microsoft OneDrive",
+                "25.115.0615.0002",
+                "",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft Office LTSC Professional Plus 2024 - en-us",
+                "16.0.17932.20428",
+                "",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft Office LTSC Professional Plus 2024 - pt-br",
+                "16.0.17932.20428",
+                "",
+                "Microsoft Corporation"
+            ],
+            [
+                "Riot Vanguard",
+                "",
+                "",
+                "Riot Games, Inc."
+            ],
+            [
+                "Fast Food Simulator",
+                "",
+                "",
+                "No Ceiling Games"
+            ],
+            [
+                "Counter-Strike 2",
+                "",
+                "",
+                "Valve"
+            ],
+            [
+                "Little Nightmares II",
+                "",
+                "",
+                "Tarsier Studios"
+            ],
+            [
+                "Wacom Tablet",
+                "6.4.10-3",
+                "",
+                "Wacom Technology Corp."
+            ],
+            [
+                "Python 3.13.5 Documentation (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Windows SDK DirectX x64 Remote",
+                "10.1.26100.3916",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "DiagnosticsHub_CollectionService",
+                "17.12.35318",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Java(TM) SE Development Kit 24.0.2 (64-bit)",
+                "24.0.2.0",
+                "20250716",
+                "Oracle Corporation"
+            ],
+            [
+                "Python 3.13.5 pip Bootstrap (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Universal CRT Tools x64",
+                "10.1.26100.3916",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "vs_communityx64msi",
+                "17.14.36025",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Python 3.13.5 Executables (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211",
+                "14.44.35211",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Application Verifier x64 External Package (DesktopEditions)",
+                "10.1.26100.3916",
+                "20250630",
+                "Microsoft"
+            ],
+            [
+                "vs_devenx64vmsi",
+                "17.14.36015",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "vs_Graphics_Singletonx64",
+                "17.14.36015",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft System CLR Types para SQL Server 2019",
+                "15.0.2000.5",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Windows App Certification Kit Native Components",
+                "10.1.26100.3916",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Google Drive",
+                "111.0.2.0",
+                "",
+                "Google LLC"
+            ],
+            [
+                "VS JIT Debugger",
+                "17.0.157.0",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft .NET Host - 8.0.13 (x64)",
+                "64.52.27977",
+                "20250708",
+                "Microsoft Corporation"
+            ],
+            [
+                "icecap_collection_x64",
+                "17.14.36015",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft Visual Studio Installer",
+                "3.14.2075.50697",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft Windows Desktop Runtime - 8.0.13 (x64)",
+                "64.52.27986",
+                "20250708",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211",
+                "14.44.35211",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "vs_minshellx64msi",
+                "17.14.36015",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Office 16 Click-to-Run Licensing Component",
+                "16.0.17932.20428",
+                "20250714",
+                "Microsoft Corporation"
+            ],
+            [
+                "Office 16 Click-to-Run Extensibility Component",
+                "16.0.17928.20216",
+                "20250706",
+                "Microsoft Corporation"
+            ],
+            [
+                "Office 16 Click-to-Run Localization Component",
+                "16.0.17928.20216",
+                "20250706",
+                "Microsoft Corporation"
+            ],
+            [
+                "Application Verifier x64 External Package (OnecoreUAP)",
+                "10.1.26100.3916",
+                "20250630",
+                "Microsoft"
+            ],
+            [
+                "Python 3.13.5 Core Interpreter (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Python 3.13.5 Test Suite (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "MySQL Server 8.0",
+                "8.0.42",
+                "20250630",
+                "Oracle Corporation"
+            ],
+            [
+                "Python 3.13.5 Tcl/Tk Support (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Adobe Acrobat (64-bit)",
+                "25.001.20531",
+                "20250703",
+                "Adobe"
+            ],
+            [
+                "Application Verifier x64 External Package (DesktopEditions)",
+                "10.1.22621.5040",
+                "20250630",
+                "Microsoft"
+            ],
+            [
+                "NVIDIA Driver de grficos 576.88",
+                "576.88",
+                "20250708",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA App 11.0.4.159",
+                "11.0.4.159",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA MessageBus 3 for NvApp",
+                "3.15",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Backend",
+                "11.0.4.159",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NvCpl",
+                "1.0",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Software do sistema PhysX 9.23.1019",
+                "9.23.1019",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA FrameView SDK 1.5.10920.35420203",
+                "1.5.10920.35420203",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Driver de udio HD 1.4.3.2",
+                "1.4.3.2",
+                "20250708",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Install Application",
+                "2.1002.428.0",
+                "20250708",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Container",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA AIUser Container",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA LocalSystem Container",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Session Container",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA User Container",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA NvDLISR",
+                "1.0",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Watchdog Plugin for NvContainer",
+                "1.42",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Telemetry Client",
+                "19.4.23.0",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA ShadowPlay 11.0.4.0",
+                "11.0.4.0",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA USBC Driver 1.52.831.832",
+                "1.52.831.832",
+                "20250708",
+                "NVIDIA Corporation"
+            ],
+            [
+                "NVIDIA Virtual Audio 4.65.0.3",
+                "4.65.0.3",
+                "20250630",
+                "NVIDIA Corporation"
+            ],
+            [
+                "Python 3.13.5 Development Libraries (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "vs_minshellinteropx64msi",
+                "17.14.36015",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Microsoft .NET Host FX Resolver - 8.0.13 (x64)",
+                "64.52.27977",
+                "20250708",
+                "Microsoft Corporation"
+            ],
+            [
+                "Application Verifier x64 External Package (OnecoreUAP)",
+                "10.1.22621.5040",
+                "20250630",
+                "Microsoft"
+            ],
+            [
+                "Microsoft .NET Runtime - 8.0.13 (x64)",
+                "64.52.27977",
+                "20250708",
+                "Microsoft Corporation"
+            ],
+            [
+                "MySQL Workbench 8.0 CE",
+                "8.0.42",
+                "20250630",
+                "Oracle Corporation"
+            ],
+            [
+                "Python 3.13.5 Standard Library (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "Python 3.13.5 Add to Path (64-bit)",
+                "3.13.5150.0",
+                "20250630",
+                "Python Software Foundation"
+            ],
+            [
+                "VS Script Debugging Common",
+                "17.0.157.0",
+                "20250630",
+                "Microsoft Corporation"
+            ],
+            [
+                "Epic Games Launcher Prerequisites (x64)",
+                "1.0.0.0",
+                "20250716",
+                "Epic Games, Inc."
+            ],
+            [
+                "Microsoft Visual C++ 2022 X64 Debug Runtime - 14.44.35211",
+                "14.44.35211",
+                "20250630",
+                "Microsoft Corporation"
+            ]
+        ]
+    },
+    "machine": {
+        "Motherboard": {
+            "Name": "B450M DS3H V2",
+            "Vendor": "Gigabyte Technology Co., Ltd.",
+            "IdentifyingNumber": "Default string"
+        },
+        "OS": {
+            "Caption": "Microsoft Windows 11 Pro",
+            "Version": "10.0.26100",
+            "BuildNumber": "26100",
+            "Manufacturer": "Microsoft Corporation",
+            "SerialNumber": "00330-80000-00000-AA321",
+            "InstallDate": "30/06/2025 17:53:09"
+        },
+        "Processor": {
+            "Name": "AMD Ryzen 5 4500 6-Core Processor",
+            "NumberOfLogicalProcessors": "12",
+            "NumberOfCores": "6"
+        }
+    },
+    "user": {
+        "name": "Iago",
+        "cpf": "1234"
+    }
+}
