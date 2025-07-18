@@ -85,46 +85,90 @@ class UserForm(QObject):
         self.createRequired.emit(name, cpf)
 
     def setMode(self, mode:int):
-        create = True
-        search = True
-        _continue = True
-        clear = True
-        cpf = True
-        name = True
+        # create = True
+        # search = True
+        # _continue = True
+        # clear = True
+        # cpf = True
+        # name = True
+
+        # if mode == self.MODE_INITIAL:
+        #     _continue = False
+        #     create = False
+        #     name = False
+        #     clear = False
+
+        # elif mode in (self.MODE_SEARCH_FOUND, self.MODE_CREATE_SUCCESS):
+        #     cpf = False
+        #     name = False
+        #     create = False
+        #     search = False
+
+        # elif mode in (self.MODE_SEARCH_NOT_FOUND, self.MODE_CREATE_FAIL):
+        #     _continue = False
+
+        # elif mode in (self.MODE_SEARCH, self.MODE_CREATE, self.MODE_CONTINUE):
+        #     create = False
+        #     search = False
+        #     _continue = False
+        #     cpf = False
+        #     name = False
+        #     clear = False
+
+        # else:
+        #     raise ValueError()
+
+        # self.__ui.btnCreate.setVisible(create)
+        # self.__ui.btnSearch.setVisible(search)
+        # self.__ui.btnContinue.setVisible(_continue)
+        # self.__ui.btnClear.setVisible(clear)
+        # self.__ui.lineCpf.setVisible(cpf)
+        # self.__ui.lineName.setVisible(name)
+
+        lineCpf = self.__ui.lineCpf
+        lineName = self.__ui.lineName
+        labelName = self.__ui.labelName
+        btnClear = self.__ui.btnClear
+        btnCreate = self.__ui.btnCreate
+        btnSearch = self.__ui.btnSearch
+        btnContinue = self.__ui.btnContinue
+
+        btns = { btnClear, btnCreate, btnSearch, btnContinue }
+        _all = { lineCpf, lineName, labelName } | btns
 
         if mode == self.MODE_INITIAL:
-            _continue = False
-            create = False
-            name = False
-            clear = False
+            lineCpf.setEnabled(True)
+            self.__iter('hide', *_all - {lineCpf, btnSearch})
+            self.__iter('show', btnSearch)
+            self.__iter('setEnabled', lineCpf, btnSearch, args=(True, ))
 
         elif mode in (self.MODE_SEARCH_FOUND, self.MODE_CREATE_SUCCESS):
-            cpf = False
-            name = False
-            create = False
-            search = False
+            self.__iter('hide', btnCreate, btnSearch)
+            self.__iter('show', lineName, labelName, btnClear, btnContinue)
+            self.__iter('setEnabled', lineCpf, lineName, args=(False, ))
+            self.__iter('setEnabled', btnClear, btnContinue, args=(True, ))
 
         elif mode in (self.MODE_SEARCH_NOT_FOUND, self.MODE_CREATE_FAIL):
-            _continue = False
+            self.__iter('hide', btnContinue)
+            self.__iter('show', *_all - {btnContinue})
+            self.__iter('setEnabled', *_all - {labelName, btnContinue}, args=(True, ))
 
-        elif mode in (self.MODE_SEARCH, self.MODE_CREATE, self.MODE_CONTINUE):
-            create = False
-            search = False
-            _continue = False
-            cpf = False
-            name = False
-            clear = False
+        elif mode == self.MODE_SEARCH:
+            self.__iter('hide', *_all - { lineCpf, btnSearch })
+            self.__iter('setEnabled', lineCpf, btnSearch, args=(False, ))
 
-        else:
-            raise ValueError()
+        elif mode in (self.MODE_CREATE, self.MODE_CONTINUE):
+            objs = {lineCpf, lineName, labelName, btnClear, btnContinue}
+            self.__iter('show', *objs)
+            self.__iter('hide', *_all - objs)
+            self.__iter('setEnabled', *_all - { labelName }, args=(False, ))
 
-        self.__ui.btnCreate.setEnabled(create)
-        self.__ui.btnSearch.setEnabled(search)
-        self.__ui.btnContinue.setEnabled(_continue)
-        self.__ui.btnClear.setEnabled(clear)
-        self.__ui.lineCpf.setEnabled(cpf)
-        self.__ui.lineName.setEnabled(name)
         self.__ui.labelMessage.setText(self.__MODE_MSGS.get(mode, ''))
 
     def setName(self, name:str):
         self.__ui.lineName.setText(name)
+
+
+    def __iter(self, funcName:str, *wids:QWidget, args:tuple=(), kwargs:dict={}):
+        for wid in wids:
+            getattr(wid, funcName)(*args, **kwargs)

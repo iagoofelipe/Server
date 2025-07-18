@@ -67,7 +67,7 @@ class SocketIO(EventDispatcher):
         else:
             str_data = f'{cmd}{SERVER_CMD_SEP}{json.dumps(data)}{SERVER_CMD_END}'
         
-        log.info(f'{self.__pref} sending command <{cmd=} {data=}>...')
+        log.debug(f'{self.__pref} sending command <{cmd=} {data=}>...')
         self.__socket.sendall(str_data.encode())
 
     @staticmethod

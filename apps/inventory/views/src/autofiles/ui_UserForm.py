@@ -45,25 +45,25 @@ class Ui_UserForm(object):
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.widget)
-        self.label_2.setObjectName(u"label_2")
-
-        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
-
         self.lineCpf = QLineEdit(self.widget)
         self.lineCpf.setObjectName(u"lineCpf")
 
         self.gridLayout.addWidget(self.lineCpf, 0, 1, 1, 1)
 
-        self.label = QLabel(self.widget)
-        self.label.setObjectName(u"label")
-
-        self.gridLayout.addWidget(self.label, 1, 0, 1, 1)
-
         self.lineName = QLineEdit(self.widget)
         self.lineName.setObjectName(u"lineName")
 
         self.gridLayout.addWidget(self.lineName, 1, 1, 1, 1)
+
+        self.label_2 = QLabel(self.widget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
+
+        self.labelName = QLabel(self.widget)
+        self.labelName.setObjectName(u"labelName")
+
+        self.gridLayout.addWidget(self.labelName, 1, 0, 1, 1)
 
 
         self.verticalLayout.addWidget(self.widget)
@@ -109,6 +109,11 @@ class Ui_UserForm(object):
 
         self.verticalLayout.addWidget(self.widget_2)
 
+        QWidget.setTabOrder(self.lineCpf, self.lineName)
+        QWidget.setTabOrder(self.lineName, self.btnContinue)
+        QWidget.setTabOrder(self.btnContinue, self.btnSearch)
+        QWidget.setTabOrder(self.btnSearch, self.btnCreate)
+        QWidget.setTabOrder(self.btnCreate, self.btnClear)
 
         self.retranslateUi(UserForm)
 
@@ -120,7 +125,7 @@ class Ui_UserForm(object):
         self.label_3.setText(QCoreApplication.translate("UserForm", u"User", None))
         self.label_4.setText(QCoreApplication.translate("UserForm", u"Provide the user data to continue the process", None))
         self.label_2.setText(QCoreApplication.translate("UserForm", u"CPF", None))
-        self.label.setText(QCoreApplication.translate("UserForm", u"Name", None))
+        self.labelName.setText(QCoreApplication.translate("UserForm", u"Name", None))
         self.labelMessage.setText("")
         self.btnClear.setText(QCoreApplication.translate("UserForm", u"clear", None))
         self.btnCreate.setText(QCoreApplication.translate("UserForm", u"create", None))

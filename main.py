@@ -5,16 +5,20 @@ Main entry, used to invoke the needed resource by commandline.
 """
 
 import sys, os
+from base.consts import FILE_CONFIG
 
 def helpMessage():
     print(
         f'usage: {os.path.basename(__file__)} [option [-h]]',
         '',
         'options:',
-        '\tchat.app\t\tChat application',
-        '\tchat.server\t\tChat server',
-        '\tinventory.app\t\tInventory application',
-        '\tinventory.server\t\tInventory server',
+        '\tchat.app',
+        '\tchat.server',
+        '\tinventory.app',
+        '\tinventory.server',
+        '',
+        '\treset',
+        '',
         '\ttest',
         '\t\tinventory.app',
         '\t\t\tuserForm',
@@ -55,6 +59,13 @@ if __name__ == '__main__':
         from servers.inventory.server import InventoryServer
         server = InventoryServer(args)
         server.startloop()
+
+    elif option == 'reset':
+        if os.path.exists(FILE_CONFIG):
+            print('config file removed')
+            os.remove(FILE_CONFIG)
+        else:
+            print('config not found')
 
     elif option == 'test':
         if len(args) != 2:

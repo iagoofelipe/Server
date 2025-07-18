@@ -9,11 +9,14 @@ from .forms.userForm import UserForm
 class AppView(QObject):
     def __init__(self, model:AppModel):
         super().__init__()
+        self.__currentUi = None
         self.__model = model
         self.__inventoryForm = InventoryForm(self)
         self.__alertForm = AlertForm(self)
         self.__userForm = UserForm(self)
         self.__win = QMainWindow()
+
+        self.__inventoryForm.backRequired.connect(self.on_inventoryForm_backRequired)
 
     def initialize(self):
         self.setupUiById(self.__alertForm.UI_ID)
@@ -24,10 +27,21 @@ class AppView(QObject):
     def alertForm(self): return self.__alertForm
     def userForm(self): return self.__userForm
 
-    def showMessage(self, text:str, timeout:float=0):
-        self.__win.statusBar().showMessage(text, timeout)
+    def showMessage(self, text:str):
+        match self.__currentUi:
+            case self.__alertForm.UI_ID:
+                self.__alertForm.setText(text)
+            
+            case self.__inventoryForm.UI_ID:
+                self.__inventoryForm.setText(text)
+
+            case _:
+                self.__win.statusBar().showMessage(text)
 
     def setupUiById(self, uiId:int):
+        if self.__currentUi == uiId:
+            return
+        
         match uiId:
             case self.__inventoryForm.UI_ID:
                 wid = self.__inventoryForm.setup()
@@ -41,4 +55,8 @@ class AppView(QObject):
             case _:
                 raise ValueError()
         
+        self.__currentUi = uiId
         self.__win.setCentralWidget(wid)
+
+    def on_inventoryForm_backRequired(self):
+        self.setupUiById(self.__userForm.UI_ID)

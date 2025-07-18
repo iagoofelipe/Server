@@ -117,9 +117,19 @@ class Ui_InventoryForm(object):
         self.horizontalLayout = QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.labelAlert = QLabel(self.widget)
+        self.labelAlert.setObjectName(u"labelAlert")
+
+        self.horizontalLayout.addWidget(self.labelAlert)
+
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.btnBack = QPushButton(self.widget)
+        self.btnBack.setObjectName(u"btnBack")
+
+        self.horizontalLayout.addWidget(self.btnBack)
 
         self.btnSave = QPushButton(self.widget)
         self.btnSave.setObjectName(u"btnSave")
@@ -129,6 +139,12 @@ class Ui_InventoryForm(object):
 
         self.verticalLayout_3.addWidget(self.widget)
 
+        QWidget.setTabOrder(self.btnSave, self.btnBack)
+        QWidget.setTabOrder(self.btnBack, self.lineName)
+        QWidget.setTabOrder(self.lineName, self.lineCpf)
+        QWidget.setTabOrder(self.lineCpf, self.lineMac)
+        QWidget.setTabOrder(self.lineMac, self.tabWidget)
+        QWidget.setTabOrder(self.tabWidget, self.tablePrograms)
 
         self.retranslateUi(InventoryForm)
 
@@ -155,6 +171,8 @@ class Ui_InventoryForm(object):
         ___qtablewidgetitem3 = self.tablePrograms.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("InventoryForm", u"Publisher", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.widTabPrograms), QCoreApplication.translate("InventoryForm", u"Programs", None))
+        self.labelAlert.setText(QCoreApplication.translate("InventoryForm", u"-ALERT-", None))
+        self.btnBack.setText(QCoreApplication.translate("InventoryForm", u"back", None))
         self.btnSave.setText(QCoreApplication.translate("InventoryForm", u"save", None))
     # retranslateUi
 

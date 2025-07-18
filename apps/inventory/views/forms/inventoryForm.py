@@ -9,6 +9,7 @@ class InventoryForm(QObject):
     UI_ID = UI_ID_INVENTORY_FORM
 
     saveRequired = Signal(str, str)
+    backRequired = Signal()
 
     def __init__(self, parent:QObject=None):
         super().__init__(parent)
@@ -21,8 +22,13 @@ class InventoryForm(QObject):
         self.__machineLayout = QVBoxLayout(self.__ui.widTabSystem)
 
         self.__ui.btnSave.clicked.connect(self.on_btnSave_clicked)
+        self.__ui.btnBack.clicked.connect(self.backRequired)
+        self.setText('')
 
         return wid
+    
+    def setText(self, text:str):
+        self.__ui.labelAlert.setText(text)
     
     def on_btnSave_clicked(self):
         self.saveRequired.emit(self.__ui.lineName.text(), self.__ui.lineCpf.text())
@@ -61,6 +67,4 @@ class InventoryForm(QObject):
         return dict(name=self.__ui.lineName.text(), cpf=self.__ui.lineCpf.text())
     
     def blockServerSenders(self, arg:bool):
-        self.__ui.lineCpf.setDisabled(arg)
-        self.__ui.lineName.setDisabled(arg)
         self.__ui.btnSave.setDisabled(arg)

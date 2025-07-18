@@ -16,11 +16,11 @@ class ServerClient(QObject):
             self.__cls = cls
 
         def onCommandReceived(self, cmd:str, args):
-            if cmd == CMD_SYSINFO:
+            if cmd == CMD_MACHINE_DATA:
                 self.__cls.saveMachineFinished.emit(args['success'], args['error'])
 
             elif cmd == CMD_USER_VALIDATE:
-                self.__cls.validateUserFinished.emit(args['valid'], args['userName'])
+                self.__cls.validateUserFinished.emit(args['valid'], args['name'])
 
             elif cmd == CMD_USER_CREATE:
                 self.__cls.createUserFinished.emit(args['success'])
@@ -52,4 +52,4 @@ class ServerClient(QObject):
         self.__con.sendCommand(CMD_USER_CREATE, {'name': name, 'cpf': cpf})
 
     def _saveMachine(self, programs, machine, mac, user):
-        self.__con.sendCommand(CMD_SYSINFO, dict(programs=programs, machine=machine, mac=mac, user=user))
+        self.__con.sendCommand(CMD_MACHINE_DATA, dict(programs=programs, machine=machine, mac=mac, user=user))
